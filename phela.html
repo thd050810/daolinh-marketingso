@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phê La</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* small custom styles to mimic feel */
+    .hero-slide { height: 52vh; min-height: 320px; }
+    .product-card img { min-height: 160px; object-fit: cover; }
+  </style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+  <!-- NAV -->
+  <header class="shadow-sm bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-6">
+          <a href="#" class="text-2xl font-bold tracking-tight">Phê La</a>
+          <nav class="hidden md:flex items-center space-x-4 text-sm">
+            <a href="products.html" class="hover:text-gray-700 underline ">Sản phẩm</a>
+            <a href="#brand" class="hover:text-gray-700 underline">Câu chuyện</a>
+            <a href="#news" class="hover:text-gray-700 underline">Tin tức</a>
+            <a href="#stores" class="hover:text-gray-700 underline ">Cửa hàng</a>
+            <a href="#contact" class="hover:text-gray-700 underline">Liên hệ</a>
+          </nav>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button class="hidden md:inline-block px-4 py-2 border rounded-md text-sm">Đăng nhập</button>
+          <a href="#cart" class="inline-flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 6h12l-2-6M16 21a1 1 0 100-2 1 1 0 000 2zm-8 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+            <span class="ml-1 text-sm">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / CAROUSEL -->
+  <section class="hero-slide relative overflow-hidden">
+    <div id="carousel" class="relative h-full">
+      <div class="absolute inset-0 transition-opacity duration-700" data-slide-index="0">
+        <img src="image/phela1.jpg" alt="hero1" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
+        <div class="absolute left-6 bottom-10 max-w-xl">
+          <h2 class="text-3xl md:text-4xl font-bold">PHÊ LA VÀ NHỮNG ĐIỀU KHÁC BIỆT</h2>
+          <p class="mt-3 text-sm md:text-base">Đánh thức những nốt hương đặc sản - Nguyên bản - Thủ công.</p>
+        </div>
+      </div>
+      <div class="absolute inset-0 transition-opacity duration-700 opacity-0" data-slide-index="1">
+        <img src="image/phela2.jpg" alt="hero2" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
+        <div class="absolute left-6 bottom-10 max-w-xl">
+          <h2 class="text-3xl md:text-4xl font-bold">BỘ SƯU TẬP HƯƠNG VỊ</h2>
+          <p class="mt-3 text-sm md:text-base">Sữa chua, trà, và nhiều món chill dành cho bạn.</p>
+        </div>
+      </div>
+    </div>
+    <div class="absolute right-4 top-1/2 -translate-y-1/2 flex flex-col gap-2">
+      <button id="prev" class="bg-white/90 p-2 rounded-full shadow">‹</button>
+      <button id="next" class="bg-white/90 p-2 rounded-full shadow">›</button>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+    <!-- Featured products -->
+    <section id="products" class="bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold">CÁC DÒNG SẢN PHẨM NỔI BẬT</h3>
+      <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        <!-- Product card sample -->
+        <article class="product-card border rounded-lg overflow-hidden">
+          <img src="image/phela_vani.jpg" alt="product" class="w-full" />
+          <div class="p-3">
+            <h4 class="font-semibold text-sm">PHÊ XỈU VANI</h4>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-sm font-medium">50.000 ₫</span>
+              <button class="px-2 py-1 text-xs border rounded">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card border rounded-lg overflow-hidden">
+          <img src="image/phela_olongsua.jpg" alt="product" class="w-full" />
+          <div class="p-3">
+            <h4 class="font-semibold text-sm">Ô LONG SỮA PHÊ LA</h4>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-sm font-medium">54.000 ₫</span>
+              <button class="px-2 py-1 text-xs border rounded">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card border rounded-lg overflow-hidden">
+          <img src="image/phela_match.jpg" alt="product" class="w-full" />
+          <div class="p-3">
+            <h4 class="font-semibold text-sm">MATCHA PHAN XI PĂNG</h4>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-sm font-medium">64.000 ₫</span>
+              <button class="px-2 py-1 text-xs border rounded">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card border rounded-lg overflow-hidden">
+          <img src="image/phela_buoi.jpg alt="product" class="w-full" />
+          <div class="p-3">
+            <h4 class="font-semibold text-sm">BÒNG BƯỞI – Ô LONG</h4>
+            <div class="mt-2 flex items-center justify-between">
+              <span class="text-sm font-medium">64.000 ₫</span>
+              <button class="px-2 py-1 text-xs border rounded">Thêm vào giỏ</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="mt-4 text-right">
+        <a href="products.html" class="text-sm underline">Xem thêm</a>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section id="news" class="mt-6 bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold">TIN TỨC NỔI BẬT</h3>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+        <article class="flex flex-col border rounded overflow-hidden">
+          <img src="https://picsum.photos/600/300?random=11" alt="news" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <h4 class="font-semibold">Sữa Chua Bòng Bưởi – Sữa Chua Ô Long Đá Xay</h4>
+            <p class="mt-2 text-sm text-gray-600">Lễ khai giảng năm học chill 2025 – 2026 bắt đầu! Đang tiến vào lễ đài 03 miền...</p>
+            <a class="mt-3 inline-block text-sm underline" href="#">Đọc tiếp</a>
+          </div>
+        </article>
+        <article class="flex flex-col border rounded overflow-hidden">
+          <img src="https://picsum.photos/600/300?random=12" alt="news" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <h4 class="font-semibold">Phê Xỉu Vani – Chill Đây Chill Đó</h4>
+            <p class="mt-2 text-sm text-gray-600">Như thước phim tuổi thơ chầm chậm quay về ngày bé...</p>
+            <a class="mt-3 inline-block text-sm underline" href="#">Đọc tiếp</a>
+          </div>
+        </article>
+        <article class="flex flex-col border rounded overflow-hidden">
+          <img src="https://picsum.photos/600/300?random=13" alt="news" class="w-full h-40 object-cover" />
+          <div class="p-4">
+            <h4 class="font-semibold">Ô Long Đào Hồng – Thức Quà Tuổi Chill</h4>
+            <p class="mt-2 text-sm text-gray-600">Từ vườn bưởi xanh mát, ký ức tuổi thơ nhẹ nhàng...</p>
+            <a class="mt-3 inline-block text-sm underline" href="#">Đọc tiếp</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Stores -->
+    <section id="stores" class="mt-6 bg-white rounded-lg shadow p-6">
+      <h3 class="text-xl font-semibold">HỆ THỐNG CỬA HÀNG</h3>
+      <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="border rounded p-4">
+          <h4 class="font-semibold">Số 65 Phạm Ngọc Thạch, Đống Đa, Hà Nội</h4>
+          <p class="mt-2 text-sm text-gray-600">Phê La chính thức ra mắt thị trường với cửa hàng đầu tiên vào tháng 03/2021.</p>
+        </div>
+        <div class="border rounded p-4">
+          <h4 class="font-semibold">Số 7 Nguyễn Chí Thanh, Đà Lạt</h4>
+          <p class="mt-2 text-sm text-gray-600">Số điện thoại: 1900 3013</p>
+        </div>
+        <div class="border rounded p-4">
+          <h4 class="font-semibold">Số 36 - 38 đường Bạch Đằng, TP Đà Nẵng</h4>
+          <p class="mt-2 text-sm text-gray-600">Số điện thoại: 1900 3013</p>
+        </div>
+      </div>
+      <div class="mt-4 text-right">
+        <a href="#" class="text-sm underline">Xem thêm về hệ thống</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-8 bg-gray-50 border-t py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h5 class="font-semibold">Phê La</h5>
+        <p class="text-sm text-gray-600 mt-2">Đánh thức những nốt hương đặc sản của nông sản Việt Nam.</p>
+      </div>
+      <div>
+        <h5 class="font-semibold">Thông tin</h5>
+        <ul class="mt-2 text-sm text-gray-600 space-y-1">
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#">Điều khoản và điều kiện</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-semibold">Liên hệ</h5>
+        <p class="text-sm text-gray-600 mt-2">1900 3013</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple carousel logic
+    (function(){
+      const slides = [...document.querySelectorAll('[data-slide-index]')];
+      let idx = 0;
+      function show(i){
+        slides.forEach((s, k)=>{
+          s.style.opacity = k===i? '1' : '0';
+          s.style.pointerEvents = k===i? 'auto' : 'none';
+        })
+      }
+      document.getElementById('next').addEventListener('click', ()=>{ idx = (idx+1)%slides.length; show(idx); });
+      document.getElementById('prev').addEventListener('click', ()=>{ idx = (idx-1+slides.length)%slides.length; show(idx); });
+      // auto rotate
+      setInterval(()=>{ idx=(idx+1)%slides.length; show(idx); }, 6000);
+      show(0);
+    })();
+  </script>
+</body>
+</html>

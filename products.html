@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sản phẩm | Phê La</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-800">
+  <!-- HEADER -->
+  <header class="shadow-sm bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-6">
+          <a href="#" class="text-2xl font-bold tracking-tight">Phê La</a>
+          <nav class="hidden md:flex items-center space-x-4 text-sm">
+            <a href="products.html" class="hover:text-gray-700 underline ">Sản phẩm</a>
+            <a href="#brand" class="hover:text-gray-700 underline">Câu chuyện</a>
+            <a href="#news" class="hover:text-gray-700 underline">Tin tức</a>
+            <a href="#stores" class="hover:text-gray-700 underline ">Cửa hàng</a>
+            <a href="#contact" class="hover:text-gray-700 underline">Liên hệ</a>
+          </nav>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button class="hidden md:inline-block px-4 py-2 border rounded-md text-sm">Đăng nhập</button>
+          <a href="#cart" class="inline-flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 6h12l-2-6M16 21a1 1 0 100-2 1 1 0 000 2zm-8 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+            <span class="ml-1 text-sm">0</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / CAROUSEL -->
+  <section class="hero-slide relative overflow-hidden mt-20">
+    <div id="carousel" class="relative h-[70vh]">
+      <div class="absolute inset-0">
+        <img src="https://phela.vn/wp-content/uploads/2023/12/1-Cover-Facebook-scaled.jpg" alt="hero1" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-white/80"></div>
+        <div class="absolute left-6 bottom-10 max-w-xl">
+          <h2 class="text-3xl md:text-4xl font-bold">BỘ SƯU TẬP HƯƠNG VỊ PHÊ LA</h2>
+          <p class="mt-3 text-base">Khám phá 12 sản phẩm đặc trưng mang đậm phong cách Phê La.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section id="products" class="py-16 px-6 bg-white">
+    <h2 class="text-3xl font-bold text-center text-green-700 mb-10">Sản phẩm nổi bật</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Product item -->
+      <script>
+        const products = [
+          {name: 'Plus-Cold Brew',price :'Xem thêm', img: 'image/plus_cold.jpg'},
+          {name: 'O Long Sữa',price :'Xem thêm', img: 'image/olongsua.jpg'},
+          {name: 'Lựu Đào',price :'Xem thêm', img: 'image/luu_dao.jpg'},
+          {name: 'Phê Nâu',price :'Xem thêm', img: 'image/phenau.jpg'},
+          {name: 'Phê Đen',price :'Xem thêm', img: 'image/pheden.jpg'},
+          {name: 'Plus - Đà Lạt',price :'Xem thêm', img: 'image/plus_dalat.jpg'},
+          {name: 'Plus - Matcha Lattte',price :'Xem thêm', img: 'image/matcha_latte.jpg'},
+          {name: 'Trà Vỏ Cà Phê',price :'Xem thêm',  img: 'image/travocaphe.jpg'},
+          {name: 'Thạch Trà Vàng',price :'Xem thêm', img: 'image/thachtarvang.jpg'},
+          {name: 'Trân Châu Phong Lan',price :'Xem thêm',  img: 'image/tranchau.jpg'},
+          {name: 'Thạch Ô Long Matcha', price :'Xem thêm', img: 'image/thachmatcha.jpg'},
+          {name: 'Thạch Trà Vỏ',price :'Xem thêm',  img: 'image/thachtravo.jpg'},
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+          const container = document.querySelector('#products .grid');
+          products.forEach(p => {
+            const div = document.createElement('div');
+            div.className = 'group relative overflow-hidden rounded-2xl shadow hover:shadow-lg transition';
+            div.innerHTML = `
+              <img src="${p.img}" alt="${p.name}" class="w-full h-64 object-cover group-hover:scale-110 transition duration-500" />
+              <div class="p-4 text-center">
+                <h3 class="text-lg font-semibold text-green-700">${p.name}</h3>
+                <p class="text-gray-600 mb-2">${p.price}</p>
+                <button class="add-to-cart bg-green-600 text-white px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition">Thêm vào giỏ</button>
+              </div>`;
+            container.appendChild(div);
+          });
+
+          document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', e => {
+              const name = e.target.parentElement.querySelector('h3').textContent;
+              alert(`Đã thêm ${name} vào giỏ hàng!`);
+            });
+          });
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-green-700 text-white text-center py-6 mt-10">
+    <p>© 2025 Phê La. Tất cả quyền được bảo lưu.</p>
+  </footer>
+</body>
+</html>
